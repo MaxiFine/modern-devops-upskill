@@ -1,0 +1,21 @@
+# services:
+#   web: 
+#     build: .
+#     environment: 
+#       DEBUG: 'true'
+#   redis: 
+#     ports: 
+#       - "6379:6379"
+
+# docker-compose.override.yml
+services:
+  flask:           # ← must match the service name in docker-compose.yml
+    build: .
+    environment:
+      FLASK_ENV: development
+      FLASK_DEBUG: '1'
+  redis:
+    ports:
+      - "6379:6379"
+
+
