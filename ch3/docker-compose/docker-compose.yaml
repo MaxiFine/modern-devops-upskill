@@ -1,7 +1,11 @@
-version: "2.4"
+# version: "2.4"
 services:
   flask:
-    image: "bharamicrosystems/python-flask-redis:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-app
+    image: "mx-python-flask-compose:1.0"
     ports:
       - "80:5000"
     networks:
